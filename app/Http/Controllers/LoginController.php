@@ -11,8 +11,8 @@ class LoginController extends Controller
     public function login()
     {
         if (Auth::check()) {
-            return redirect('Pages.home');
-        }else{
+            return redirect()->route('home');
+        } else {
             return view('Pages.login');
         }
     }
@@ -21,7 +21,7 @@ class LoginController extends Controller
     {
         $credentials = $request->only('email', 'password');
 
-        if (Auth::attempt($credentials, true, 'users')) {
+        if (Auth::attempt($credentials)) {
             return redirect()->route('home');
         } else {
             return redirect()->route('login')
