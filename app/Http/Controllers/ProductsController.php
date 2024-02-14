@@ -96,6 +96,15 @@ class ProductsController extends Controller
         return redirect()->route('products')->with('success', 'Product updated successfully.');
     }
 
+    public function search(Request $request)
+    {
+        $searchQuery = $request->input('search');
+
+        $products = Products::where('name', 'like', '%'.$searchQuery.'%')->paginate(10);
+
+        return view('Pages.products', ['products' => $products]);
+    }
+
     
 
 }

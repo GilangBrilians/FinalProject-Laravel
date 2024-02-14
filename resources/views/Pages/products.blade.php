@@ -9,6 +9,14 @@
             <h3 class="col-md-10">Data Produk</h3>
             <a href="/viewProductsInput" class="btn btn-primary col-md-2 mb-3">Tambah Data</a>
         </div>
+        <form action="{{ route('products.search') }}" method="GET" class="mb-3">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Cari nama produk..." name="search">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-primary" type="submit">Cari</button>
+                </div>
+            </div>
+        </form>
         <table class="table table-bordered">
             <thead class="thead-dark">
                 <tr>
@@ -21,18 +29,19 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($products as $products)
+            @foreach($products as $product)
                 <tr>
                     <th scope="row">{{ $loop->iteration }}</th>
-                    <td>{{ $products->name }}</td>
-                    <td>{{ $products->status }}</td>
-                    <td>{{ $products->categories->name }}</td>
-                    <td>{{ $products->price }}</td>
+                    <td>{{ $product->name }}</td>
+                    <td>{{ $product->status }}</td>
+                    <td>{{ $product->categories->name }}</td>
+                    <td>{{ $product->price }}</td>
                     <td>
-                        <a href="/editProducts/{{ $products->product_id }}">Edit</a> |
-                        <a href="/deleteProducts/{{ $products->product_id }}">Hapus</a>
-                    </tr>
-                @endforeach
+                        <a href="/editProducts/{{ $product->product_id }}">Edit</a> |
+                        <a href="/deleteProducts/{{ $product->product_id }}">Hapus</a>
+                    </td>
+                </tr>
+            @endforeach
             </tbody>
         </table>
         @endsection

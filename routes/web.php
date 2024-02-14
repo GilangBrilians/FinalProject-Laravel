@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\OrdersController;
 
 
 
@@ -31,7 +32,10 @@ Route::post('/saveProducts', [ProductsController::class, 'saveProducts']);
 Route::get('/deleteProducts/{id}', [ProductsController::class, 'deleteProducts']);
 Route::get('/editProducts/{id}', [ProductsController::class, 'editProducts']);
 Route::post('/updateProducts', [ProductsController::class, 'updateProducts'])->name('updateProducts');
+Route::get('/products/search', [ProductsController::class, 'search'])->name('products.search');
 
-
+//Order
+Route::get('orders', [OrdersController::class, 'viewOrders'])->name('orders')->middleware('auth');
+Route::get('/orders/filter', [OrdersController::class, 'viewFilter'])->name('orders.filter');
 
 
