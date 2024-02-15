@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Orders;
 use Illuminate\Support\Facades\DB;
+use App\Models\Orders;
 use App\Models\Users; 
 
 use Illuminate\Http\Request;
@@ -32,5 +32,18 @@ class OrdersController extends Controller
 
         return view('Pages.orders', compact('orders'));
     }
+
+    public function viewOrdersInput()
+    {
+        $orders = Orders::with('users')->get();
+        $users = Users::all(); 
+
+        $statuses = ['pending', 'on_progress', 'paid', 'delivered']; 
+
+
+        return view('Pages.orderInput', ['orders' => $orders, 'users' => $users, 'statuses' => $statuses]);
+    }
+    
+
     
 }

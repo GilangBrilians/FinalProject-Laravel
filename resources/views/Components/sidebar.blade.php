@@ -44,7 +44,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Jenis Pesanan</h6>
                 <a class="collapse-item" href="{{ route('orders') }}">Order Report</a>
-                <a class="collapse-item" href="">Pesanan Baru</a>
+                <a class="collapse-item" href="{{ route('viewOrdersInput') }}">Pesanan Baru</a>
                
             </div>
         </div>
