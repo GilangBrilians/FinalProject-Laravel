@@ -36,7 +36,7 @@ Route::get('/products/search', [ProductsController::class, 'search'])->name('pro
 
 //Order
 Route::get('orders', [OrdersController::class, 'viewOrders'])->name('orders')->middleware('auth');
-Route::get('/orders/filter', [OrdersController::class, 'viewFilter'])->name('orders.filter');
+// Route::get('/orders/filter', [OrdersController::class, 'viewFilter'])->name('orders.filter');
 Route::get('/viewOrdersInput', [OrdersController::class, 'viewOrdersInput'])->name('viewOrdersInput');
 
 

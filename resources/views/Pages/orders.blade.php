@@ -8,21 +8,6 @@
         <div class="row">
             <h3 class="col-md-10">Data Orders</h3>
         </div>
-        <form action="{{ route('orders.filter') }}" method="GET" class="mb-5 mt-3">
-            <div class="row">
-                <div class="col-6">
-                    <label for="start_date">Start Date:</label>
-                    <input type="date" class="form-control" id="start_date" name="start_date">
-                </div>
-                <div class="col-5">
-                    <label for="end_date">End Date:</label>
-                    <input type="date" class="form-control" id="end_date" name="end_date">
-                </div>
-                <div class="col d-flex align-items-end">
-                    <button type="submit" class="btn btn-secondary mt-auto">Filter</button>
-                </div>
-            </div>
-        </form>
         <table class="table table-bordered">
             <thead class="thead-dark">
                 <tr>

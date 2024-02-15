@@ -28,11 +28,13 @@
                             <div class="form-outline mb-4">
                                 <label class="form-label" for="email">Email address</label>
                                 <input type="email" id="email" name="email" class="form-control form-control-lg" />
+                                <div id="emailHelp" class="form-text">email : user@gmail.com</div>
                             </div>
 
                             <div class="form-outline mb-4">
                                 <label class="form-label" for="password">Password</label>
                                 <input type="password" id="password" name="password" class="form-control form-control-lg" />
+                                <div id="passwordHelp" class="form-text">Password : user</div>
                             </div>
 
                             <div class="pt-1 mb-4">
